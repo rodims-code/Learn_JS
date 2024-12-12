@@ -1,53 +1,60 @@
+
+
 /* https://developer.mozilla.org/en-US/docs/Web/JavaScript */
 
-// alert("C'est comment là bas !");
-// console.log();
+/* if(true){
+    console.log('bonjour')
+} */
 
-//Kamel Casse
-let maSuperVariable = "Hello";
 
-let ma_variable = "Hello world";
-console.log(ma_variable);
 
-// ** Les variables **
-var untext = 'this is a text'
+/*
+VRAI ET VRAI = VRAI
+VRAI ET FAUX = FAUX 
+FAUX ET FAUX = FAUX
 
-const prenom = "Julie";
+VRAI OU FAUX = VRAI
+VRAI OU VRAI = VRAI
+FAUX OU FAUX = FAUX
+*/
 
-console.log(prenom);
+/* const age = 119
+const contry = 'us'
 
-let unChiffre = 24;
+if(
+    (contry === 'us' && age >= 18) ||
+    (contry === 'fr' && age >= 16)
+){
+    console.log('Vous avez le droit de conduire')
+} */
 
-console.log(unChiffre);
 
-unChiffre = 22;
+/* if (age >= 19) {
+    console.log('Vous avez plus de 18 ans, vous etes majeur !')
+} */
 
-console.log(`Hi i'm ${prenom} i have ${unChiffre} ans`)
+let year = 2024
 
-const notes = [
-    13,
-    20,
-    4,
-    'hello',
-    [1, 2, 3]
-]
+const yourBirthDay = prompt('How is your birth day :')
 
-const person = {
-    firstName : 'Jhon',
-    lastName : 'Bob',
-    age : 24,
-    notes : [12, 14, 15],
-    job : {
-        name : 'Developper',
-        hours : 35
-    }
-  
+const age = year - yourBirthDay 
+if(age <= 12){
+    console.log('Je vous  propose de suivre la serie Tom-Tom et Nana')
+}else if (age <= 18){
+    console.log(' je vous propose de suivre 1000 et une mort insollite')
+}else{
+    console.log('Je vous propose de suivre Sharck killer 7')
 }
 
+//demander un nombre d'utilisateurs exemple 9 x 2 puis voir et lafficher si le positif ou négatif
 
-console.log(
-    person.job.name = 'Informaticien'
-    
-)
+const A = prompt('Premier chiffre : ')
+const B = prompt('Deuxieme chiffre : ')
 
-16 % 2
+const result = A * B 
+
+if (result > 0){
+    console.log(`La reponse de ${A} et ${B} est ${result} qui est positif`)
+}else{
+    console.log(`La reponse de ${A} et ${B} est ${result} qui est negatif`)
+}
