@@ -1,8 +1,15 @@
 /* https://developer.mozilla.org/en-US/docs/Web/JavaScript */
 
+/* 
+premier boucle
+let i = 0;
+while(i < 10){
+    console.log('bonjour' + i)
+    i = i + 1
+} */
 
-let age = 18
-if(age >= 18){
-    let suffix = 'Hello'
+const notes = [12, 14, 10]
+
+for (let i in notes){
+    console.log(i)
 }
-console.log (suffix)
