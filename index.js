@@ -25,7 +25,7 @@
         notes : [3, 10, 11, 18, 12]
     }
 ]
-
+calculer la moyenne d'une liste de note !
 const moyenne = (notes) =>{
     let sum = 0
     for (let note of notes){
@@ -34,37 +34,41 @@ const moyenne = (notes) =>{
     return sum / notes.length
 } */
 
-
-
-const moyenne = (notes) => {
-    let sum = 0
-    for (let note of notes){
-        sum = sum + note
-    }
-    return sum / notes.length
-}
-class Student{
-    ecole = 'ligth word school'
-    constructor(firstname, lastname){
-        this.firstname = firstname
-        this.lastname = lastname
+/* Exercice 1 
+class Rectangle{
+    constructor(width, heigth){
+        this.width = width
+        this.heigth = heigth
     }
 
-    setNotes (notes){
-        this.notes = notes
+    get perimeter(){
+        return (this.width + this.heigth)*2
     }
 
-    canPass (){
-        return moyenne(this.notes) >= 10
+    get isValid(){
+        return this.width > 0 && this.heigth > 0
     }
+
+    isBiggerThan(shape){
+        return this.perimeter > shape.perimeter
+    }
+
 }
 
-const john = new Student('John', 'Deo')
-const jean= new Student('Jean', 'Marc')
-john.setNotes(
-    [10, 10, 9]
-)
-jean.setNotes(
-    [15, 18, 16] 
-)
-console.log(john.canPass(), jean.canPass())
+class Square extends Rectangle{
+    constructor(width){
+        super(width, width)
+    }
+}
+const r = new Rectangle(10, 20)
+console.log(r.perimeter)
+console.log(r.isValid)
+
+const r2 = new Rectangle(-10, 20)
+console.log(r2.isValid) 
+
+const c = new Square(10)
+console.log(c.perimeter)
+console.log(c.isBiggerThan(r))
+*/
+
