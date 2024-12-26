@@ -33,10 +33,12 @@ const moyenne = (notes) =>{
     }
     return sum / notes.length
 } */
-
-/* Exercice 1 
+/*  Exercice 1  */
 class Rectangle{
     constructor(width, heigth){
+        if(width <= 0 || heigth <= 0){
+            throw new  Error("Impossible d'avoir  un forme negatif avec une forme negatif !")
+        }
         this.width = width
         this.heigth = heigth
     }
@@ -64,11 +66,16 @@ const r = new Rectangle(10, 20)
 console.log(r.perimeter)
 console.log(r.isValid)
 
+try{
+    const r2 = new Rectangle(-10, 20)
+}catch(e){
+    console.log(e.message)
+}
 const r2 = new Rectangle(-10, 20)
 console.log(r2.isValid) 
 
 const c = new Square(10)
 console.log(c.perimeter)
 console.log(c.isBiggerThan(r))
-*/
+
 
