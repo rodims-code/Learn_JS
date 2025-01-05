@@ -3,79 +3,14 @@
 
 
 
-/* const students = [
-    {
-        name : 'jean',
-        notes : [4, 5, 15, 16, 16]
-    },
-    {
-        name : 'patrick',
-        note : [13, 15, 5, 7, 17]
-    },
-    {
-        name : 'mari', 
-        notes : [20, 17, 10, 13, 4]
-    },
-    {
-        name : 'victore',
-        notes : [12.3, 14, 16, 3, 6]
-    },
-    {
-        name : 'angelo',
-        notes : [3, 10, 11, 18, 12]
-    }
-]
-calculer la moyenne d'une liste de note !
-const moyenne = (notes) =>{
-    let sum = 0
-    for (let note of notes){
-        sum = sum + note
-    }
-    return sum / notes.length
-} */
-/*  Exercice 1  */
-class Rectangle{
-    constructor(width, heigth){
-        if(width <= 0 || heigth <= 0){
-            throw new  Error("Impossible d'avoir  un forme negatif avec une forme negatif !")
-        }
-        this.width = width
-        this.heigth = heigth
-    }
+const myArray = ["zero", "one", "two"];
+myArray.myMethod = function (sProperty) {
+  console.log(arguments.length > 0 ? this[sProperty] : this);
+};
 
-    get perimeter(){
-        return (this.width + this.heigth)*2
-    }
+myArray.myMethod(); // prints "zero,one,two"
+myArray.myMethod(1); // prints "one"
 
-    get isValid(){
-        return this.width > 0 && this.heigth > 0
-    }
-
-    isBiggerThan(shape){
-        return this.perimeter > shape.perimeter
-    }
-
-}
-
-class Square extends Rectangle{
-    constructor(width){
-        super(width, width)
-    }
-}
-const r = new Rectangle(10, 20)
-console.log(r.perimeter)
-console.log(r.isValid)
-
-try{
-    const r2 = new Rectangle(-10, 20)
-}catch(e){
-    console.log(e.message)
-}
-const r2 = new Rectangle(-10, 20)
-console.log(r2.isValid) 
-
-const c = new Square(10)
-console.log(c.perimeter)
-console.log(c.isBiggerThan(r))
-
-
+setTimeout(myArray.myMethod, 1.0 * 1000); // prints "[object Window]" after 1 second
+setTimeout(myArray.myMethod, 1.5 * 1000, "1"); // prints "undefined" after 1.5 seconds
+setTimeout(myArray.myMethod, 2.0 * 1000, "1"); // prints "undefined" after 2 seconds
