@@ -1,81 +1,40 @@
 /* https://developer.mozilla.org/en-US/docs/Web/JavaScript */
 /* https://devdocs.io/*/
 
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("toto");
+  }, 300);
+});
 
-
-/* const students = [
-    {
-        name : 'jean',
-        notes : [4, 5, 15, 16, 16]
-    },
-    {
-        name : 'patrick',
-        note : [13, 15, 5, 7, 17]
-    },
-    {
-        name : 'mari', 
-        notes : [20, 17, 10, 13, 4]
-    },
-    {
-        name : 'victore',
-        notes : [12.3, 14, 16, 3, 6]
-    },
-    {
-        name : 'angelo',
-        notes : [3, 10, 11, 18, 12]
-    }
-]
-calculer la moyenne d'une liste de note !
-const moyenne = (notes) =>{
-    let sum = 0
-    for (let note of notes){
-        sum = sum + note
-    }
-    return sum / notes.length
-} */
-/*  Exercice 1  */
-class Rectangle{
-    constructor(width, heigth){
-        if(width <= 0 || heigth <= 0){
-            throw new  Error("Impossible d'avoir  un forme negatif avec une forme negatif !")
-        }
-        this.width = width
-        this.heigth = heigth
-    }
-
-    get perimeter(){
-        return (this.width + this.heigth)*2
-    }
-
-    get isValid(){
-        return this.width > 0 && this.heigth > 0
-    }
-
-    isBiggerThan(shape){
-        return this.perimeter > shape.perimeter
-    }
-
+function handleFulfilledA(result) {
+  console.log("Fulfilled A with result:", result);
+  return result;
 }
 
-class Square extends Rectangle{
-    constructor(width){
-        super(width, width)
-    }
+function handleRejectedA(error) {
+  console.error("Rejected A with error:", error);
 }
-const r = new Rectangle(10, 20)
-console.log(r.perimeter)
-console.log(r.isValid)
 
-try{
-    const r2 = new Rectangle(-10, 20)
-}catch(e){
-    console.log(e.message)
+function handleFulfilledB(result) {
+  console.log("Fulfilled B with result:", result);
+  return result;
 }
-const r2 = new Rectangle(-10, 20)
-console.log(r2.isValid) 
 
-const c = new Square(10)
-console.log(c.perimeter)
-console.log(c.isBiggerThan(r))
+function handleRejectedB(error) {
+  console.error("Rejected B with error:", error);
+}
 
+function handleFulfilledC(result) {
+  console.log("Fulfilled C with result:", result);
+  return result;
+}
 
+function handleRejectedC(error) {
+  console.error("Rejected C with error:", error);
+}
+
+myPromise
+  .then(handleFulfilledA, handleRejectedA)
+  .then(handleFulfilledB, handleRejectedB)
+  .then(handleFulfilledC, handleRejectedC);
