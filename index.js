@@ -35,6 +35,6 @@ function handleRejectedC(error) {
 }
 
 myPromise
-  .then(handleFulfilledA, handleRejectedA)
+  .catch(handleFulfilledA, handleRejectedA)
   .then(handleFulfilledB, handleRejectedB)
   .then(handleFulfilledC, handleRejectedC);
